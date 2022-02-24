@@ -12,3 +12,15 @@ It contains a number of helpful programs for understanding the scientific concep
 It includes several tools for converting between Eridian and Human units as well as simple references for several of the common mathematical operations used throughout the book.
 
 
+## Available Tools:
+
+- Eridian Integer to Human Integer Conversion Tool
+- Human Integer to Eridian Integer Conversion Tool
+- Human/Eridian Atmosphere Conversion tool
+
+
+## Coming Soon:
+- Eridian/Human Time Conversion
+- Astrophage Fuel Consumption
+- Astrophage Navigation
+- Astrophage Detection
