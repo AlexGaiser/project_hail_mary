@@ -1,8 +1,8 @@
 from converters import Converter, Numbers
 
-human = Converter().build()
+human = Converter.build()
 
-eridian = Converter().build('eridian')
+eridian = Converter.build('eridian')
 numbers = Numbers()
 
 
