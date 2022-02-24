@@ -1,7 +1,6 @@
 # Project Hail Mary
 
-## Image Goes Here
-<img src="./assets/project_hail_mary_cover.jpeg" />
+<img src="./assets/project_hail_mary_cover.jpeg" width="50%" />
 
 
 ## Description
