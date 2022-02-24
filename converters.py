@@ -69,6 +69,10 @@ class EridianToHumanConverter:
 
 
 class Converter:
+    def __init__(self) -> None:
+        self.human = HumanToEridianConverter()
+        self.eridian = EridianToHumanConverter()
+
     def build(format: str = 'human'):
         if format == 'eridian':
             return EridianToHumanConverter()

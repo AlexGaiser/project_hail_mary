@@ -6,6 +6,32 @@ eridian = Converter.build('eridian')
 numbers = Numbers()
 
 
+def test_combined_converter():
+    converter = Converter()
+    assert converter.human.type == 'human'
+
+    assert converter.human.atmospheres(1) == 29
+
+    assert converter.human.integer(0) == 'ℓ'
+    assert converter.human.integer(1) == 'I'
+    assert converter.human.integer(2) == 'V'
+    assert converter.human.integer(3) == 'λ'
+    assert converter.human.integer(4) == '+'
+    assert converter.human.integer(5) == '⍱'
+
+    assert converter.human.integer(10) == 'I+'
+
+    assert converter.eridian.type == 'eridian'
+
+    assert converter.eridian.atmospheres(29) == 1
+    assert converter.eridian.integer('ℓ') == 0
+    assert converter.eridian.integer('I') == 1
+    assert converter.eridian.integer('Iℓ') == 6
+    assert converter.eridian.integer('Iλ') == 9
+    assert converter.eridian.integer('I+') == 10
+    assert converter.eridian.integer('⍱+λVIℓ') == 44790
+
+
 def test_human_converter():
     assert human.type == 'human'
 
