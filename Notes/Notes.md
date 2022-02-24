@@ -5,9 +5,9 @@
 ### Numbers
 
 - The Eridian counting system uses base 6
-- It uses the symbols: 'L', 'I', 'V', 'λ', '+', '⍱'
+- It uses the symbols: 'ℓ', 'I', 'V', 'λ', '+', '⍱'
 - These Symbols Represent the Following digits Arabic Numerals
-  - O: 'L'
+  - O: 'ℓ'
   - 1: 'I'
   - 2: 'V'
   - 3: 'λ'
