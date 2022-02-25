@@ -17,10 +17,9 @@ It includes several tools for converting between Eridian and Human units as well
 - Eridian Integer to Human Integer Conversion Tool
 - Human Integer to Eridian Integer Conversion Tool
 - Human/Eridian Atmosphere Conversion tool
-
+- Eridian/Human Time Conversion
 
 ## Coming Soon:
-- Eridian/Human Time Conversion
 - Astrophage Fuel Consumption
 - Astrophage Navigation
 - Astrophage Detection
