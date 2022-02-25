@@ -1,3 +1,4 @@
+import constants
 from converters import Converter, Numbers
 
 human = Converter.build()
@@ -57,6 +58,12 @@ def test_eridian_converter():
     assert eridian.integer('Iλ') == 9
     assert eridian.integer('I+') == 10
     assert eridian.integer('⍱+λVIℓ') == 44790
+
+
+def test_seconds_converter():
+    assert human.seconds(2.33) == constants.HUMAN_ERIDIAN_DIGITS['1']
+    assert eridian.seconds(constants.HUMAN_ERIDIAN_DIGITS['1']) == 2.33
+    assert eridian.seconds('⍱+λVIℓ') == 104360.7
 
 
 def test_number_class():

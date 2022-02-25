@@ -1,14 +1,8 @@
 from modulefinder import Module
+import constants
 
 
 class Numbers:
-    _human_digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-
-    _eridian_digits = ['ℓ', 'I', 'V', 'λ', '+', '⍱']
-
-    human = {}
-    eridian = {}
-
     def base10ToBase6(self, num: int) -> int:
         if num == 0:
             return 0
@@ -24,9 +18,8 @@ class Numbers:
         return int(str(num), 6)
 
     def __init__(self) -> None:
-        for idx, val in enumerate(self._eridian_digits):
-            self.human[self._human_digits[idx]] = val
-            self.eridian[val] = self._human_digits[idx]
+        self.human = constants.HUMAN_ERIDIAN_DIGITS
+        self.eridian = constants.ERIDIAN_HUMAN_DIGITS
 
 
 class HumanToEridianConverter:
@@ -44,6 +37,9 @@ class HumanToEridianConverter:
             res += self.digits[d]
 
         return res
+
+    def seconds(self, seconds) -> int:
+        return self.integer(int(seconds/constants.SECONDS_CONV_FACTOR))
 
     def atmospheres(self, atm):
         return atm * 29
@@ -66,6 +62,9 @@ class EridianToHumanConverter:
             num_str += self.digits[d]
 
         return self.numbers.base6ToBase10(int(num_str))
+
+    def seconds(self, seconds: str):
+        return self.integer(seconds) * constants.SECONDS_CONV_FACTOR
 
 
 class Converter:
