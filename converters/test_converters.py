@@ -1,5 +1,5 @@
-import constants
-from converters import Converter, Numbers
+from converters import constants
+from converters.converters import Converter, Numbers
 
 human = Converter.build()
 

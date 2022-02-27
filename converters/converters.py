@@ -1,5 +1,4 @@
-from modulefinder import Module
-import constants
+from converters import constants
 
 
 class Numbers:
