@@ -18,5 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('eridian/', include('eridian.urls'))
+    path('eridian/', include('eridian.urls')),
+    path('human/', include('human.urls'))
 ]

@@ -5,7 +5,7 @@ import sys
 
 
 # Create your views here.
-converter = Converter.build('eridian')
+converter = Converter.build()
 
 
 def index(request, value=''):
