@@ -58,7 +58,7 @@ class HumanToEridianConverter(IConverter):
         return self.integer(int(seconds/constants.SECONDS_CONV_FACTOR))
 
     def atmospheres(self, atm):
-        return atm * 29
+        return atm/29
 
 
 class EridianToHumanConverter(IConverter):
@@ -70,7 +70,7 @@ class EridianToHumanConverter(IConverter):
         self.digits = self.numbers.eridian
 
     def atmospheres(self, atm):
-        return atm/29
+        return atm * 29
 
     def integer(self, num: str) -> int:
         num_str = ''

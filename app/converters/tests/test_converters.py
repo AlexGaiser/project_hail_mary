@@ -10,8 +10,8 @@ numbers = Numbers()
 def test_combined_converter():
     converter = Converter()
     assert converter.human.type == 'human'
-
-    assert converter.human.atmospheres(1) == 29
+    assert converter.human.outputType == 'eridian'
+    assert converter.human.atmospheres(1) == 1/29
 
     assert converter.human.integer(0) == 'ℓ'
     assert converter.human.integer(1) == 'I'
@@ -24,7 +24,7 @@ def test_combined_converter():
 
     assert converter.eridian.type == 'eridian'
 
-    assert converter.eridian.atmospheres(29) == 1
+    assert converter.eridian.atmospheres(1) == 29
     assert converter.eridian.integer('ℓ') == 0
     assert converter.eridian.integer('I') == 1
     assert converter.eridian.integer('Iℓ') == 6
@@ -35,8 +35,8 @@ def test_combined_converter():
 
 def test_human_converter():
     assert human.type == 'human'
-
-    assert human.atmospheres(1) == 29
+    assert human.outputType == 'eridian'
+    assert human.atmospheres(1) == 1/29
 
     assert human.integer(0) == 'ℓ'
     assert human.integer(1) == 'I'
@@ -44,14 +44,13 @@ def test_human_converter():
     assert human.integer(3) == 'λ'
     assert human.integer(4) == '+'
     assert human.integer(5) == '⍱'
-
     assert human.integer(10) == 'I+'
 
 
 def test_eridian_converter():
     assert eridian.type == 'eridian'
-
-    assert eridian.atmospheres(29) == 1
+    assert eridian.outputType == 'human'
+    assert eridian.atmospheres(1) == 29
     assert eridian.integer('ℓ') == 0
     assert eridian.integer('I') == 1
     assert eridian.integer('Iℓ') == 6
