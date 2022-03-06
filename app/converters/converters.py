@@ -1,4 +1,5 @@
 from converters import constants
+import abc
 
 
 class Numbers:
@@ -21,8 +22,24 @@ class Numbers:
         self.eridian = constants.ERIDIAN_HUMAN_DIGITS
 
 
-class HumanToEridianConverter:
+class IConverter(metaclass=abc.ABCMeta):
+
+    @abc.abstractmethod
+    def integer(self, num: int or str):
+        pass
+
+    @abc.abstractmethod
+    def seconds(self, num):
+        pass
+
+    @abc.abstractmethod
+    def atmospheres(self, num):
+        pass
+
+
+class HumanToEridianConverter(IConverter):
     type = 'human'
+    outputType = 'eridian'
 
     def __init__(self) -> None:
         self.numbers = Numbers()
@@ -44,8 +61,9 @@ class HumanToEridianConverter:
         return atm * 29
 
 
-class EridianToHumanConverter:
+class EridianToHumanConverter(IConverter):
     type = 'eridian'
+    outputType = 'human'
 
     def __init__(self) -> None:
         self.numbers = Numbers()
@@ -68,12 +86,11 @@ class EridianToHumanConverter:
 
 class Converter:
     def __init__(self) -> None:
-        self.human = HumanToEridianConverter()
-        self.eridian = EridianToHumanConverter()
+        self.human: IConverter = HumanToEridianConverter()
+        self.eridian: IConverter = EridianToHumanConverter()
 
-    def build(format: str = 'human'):
+    def build(format: str = 'human') -> IConverter:
         if format == 'eridian':
             return EridianToHumanConverter()
-
         else:
             return HumanToEridianConverter()
