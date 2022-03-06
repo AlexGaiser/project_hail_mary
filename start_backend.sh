@@ -1,3 +1,1 @@
-export PYTHONPATH=${PYTHONPATH}:${PWD}
-
-pipenv run ./app/manage.py runserver
+pipenv run ./manage.py runserver 0.0.0.0:8000
