@@ -1,8 +1,6 @@
 import react from 'React';
 import { ER_DIGITS } from '../../constants';
-import { Button } from '../../shared/Button';
 import { Keyboard } from '../../shared/Keyboard/Keyboard';
-import styles from './EridianKeyboard.module.css';
 
 export const EridianKeyboard = () => {
   const keys = ER_DIGITS.map((d) => (
