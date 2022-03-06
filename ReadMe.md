@@ -20,6 +20,7 @@ It includes several tools for converting between Eridian and Human units as well
 - Eridian/Human Time Conversion
 
 ## Coming Soon:
+- Eridian/Human Clock Module
 - Astrophage Fuel Consumption
 - Astrophage Navigation
 - Astrophage Detection
