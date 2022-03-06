@@ -15,8 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.http import HttpResponse
+
+
+def defaultMsg(request):
+    return HttpResponse('hello welcome to the project hail mary api')
+
 
 urlpatterns = [
+    path('', defaultMsg),
     path('admin/', admin.site.urls),
     path('eridian/', include('eridian.urls')),
     path('human/', include('human.urls'))
