@@ -3,6 +3,5 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('numbers/<int:value>', views.index, name='numbers')
+    path('numbers/<int:value>', views.HumanController.getNumber, name='numbers')
 ]
