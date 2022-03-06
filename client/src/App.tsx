@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { EridianClock } from './components/EridianClock';
-import { EridianKeyboard } from './components/EridianKeyboard';
+import { EridianKeyboard } from './components/EridianKeyboard/EridianKeyboard';
 import { fetchHumanNumberToEridian } from './services/converters.service';
 import { Input } from './shared/Input';
 
@@ -12,7 +12,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Human Eridian Conversion Tool</h1>
+      <h1 className="text-3xl font-bold underline">
+        Human Eridian Conversion Tool
+      </h1>
       <h2>Eridian Keyboard</h2>
       <EridianKeyboard />
       <h2>Eridian Clock</h2>
