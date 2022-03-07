@@ -1,4 +1,4 @@
-import { ER_DIGITS_DICT } from '../constants';
+import { ER_DIGITS_DICT } from '../../constants';
 
 const numberRegex = /^-?\d*\.?\d*$/;
 
