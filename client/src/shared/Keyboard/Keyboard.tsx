@@ -5,5 +5,5 @@ interface IProp {
 }
 
 export const Keyboard = ({ keys }: IProp) => {
-  return <div className="flex ">{keys}</div>;
+  return <div className="flex flex-wrap w-full">{keys}</div>;
 };

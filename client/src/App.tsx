@@ -9,7 +9,7 @@ function App() {
       <h1 className="text-3xl font-bold underline">
         Human Eridian Conversion Tool
       </h1>
-      <div className="w-1/2 p-10">
+      <div className="p-10">
         <SecondsConverter />
       </div>
     </div>
