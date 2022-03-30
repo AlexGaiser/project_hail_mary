@@ -40,7 +40,7 @@ const SecondsConverter = () => {
             onChange={(e) => setHumanInputValue(e.target.value)}
           ></Input>
         </div>
-        <div className="flex flex-col align-center p-4">
+        <div className="flex flex-col content-center justify-around p-4">
           <button
             className="btn btn-red"
             onClick={() => setIsHumantoEridian(!isHumanToEridian)}
@@ -48,7 +48,13 @@ const SecondsConverter = () => {
             {' '}
             Switch{' '}
           </button>
-          {/* <img className="" src={arrowImg} alt="switch-arrow" /> */}
+          <img
+            className={`h-10 w-full ${
+              !isHumanToEridian ? 'rotate-180' : ''
+            }`}
+            src={arrowImg}
+            alt="switch-arrow"
+          />
         </div>
         <div
           className={`col-span-3 ${
