@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 // import './App.css';
-import { fetchHumanNumberToEridian } from './services/api/conversion.service';
+import NumbersConverter from './views/Converters/NumbersConverter';
 import SecondsConverter from './views/Converters/SecondsConverter';
 
 function App() {
@@ -11,6 +11,7 @@ function App() {
       </h1>
       <div className="p-10">
         <SecondsConverter />
+        <NumbersConverter />
       </div>
     </div>
   );
