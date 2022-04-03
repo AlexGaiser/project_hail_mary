@@ -27,7 +27,7 @@ export const fetchEridianSecondsToHuman = async (
 export const fetchEridianNumberToHuman = (
   num: string,
 ): Promise<RequestResponse<ConversionResponseData>> => {
-  return request.get(`/eridian/number/${num}`);
+  return request.get(`/eridian/number/${num.toString()}`);
 };
 
 export const HumanConversionAPI = {
