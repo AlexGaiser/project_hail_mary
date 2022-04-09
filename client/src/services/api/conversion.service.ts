@@ -6,28 +6,40 @@ interface ConversionResponseData {
   origin: string;
 }
 
-export const fetchHumanNumberToEridian = async (
+export type FetchConversionFunction<T> = (
+  val: T,
+) => Promise<RequestResponse<ConversionResponseData>>;
+
+export const fetchHumanNumberToEridian: FetchConversionFunction<
+  number
+> = async (
   num: number,
 ): Promise<RequestResponse<ConversionResponseData>> => {
   return request.get(`/human/number/${num.toString()}`);
 };
 
-export const fetchHumanSecondsToEridian = async (
+export const fetchHumanSecondsToEridian: FetchConversionFunction<
+  number
+> = async (
   num: number,
 ): Promise<RequestResponse<ConversionResponseData>> => {
   return request.get(`/human/seconds/${num.toString()}`);
 };
 
-export const fetchEridianSecondsToHuman = async (
-  num: number,
-): Promise<RequestResponse<ConversionResponseData>> => {
-  return request.get(`/eridian/seconds/${num.toString()}`);
-};
-
-export const fetchEridianNumberToHuman = (
+export const fetchEridianSecondsToHuman: FetchConversionFunction<
+  string
+> = async (
   num: string,
 ): Promise<RequestResponse<ConversionResponseData>> => {
-  return request.get(`/eridian/number/${num.toString()}`);
+  return request.get(`/eridian/seconds/${num}`);
+};
+
+export const fetchEridianNumberToHuman: FetchConversionFunction<
+  string
+> = (
+  num: string,
+): Promise<RequestResponse<ConversionResponseData>> => {
+  return request.get(`/eridian/number/${num}`);
 };
 
 export const HumanConversionAPI = {
