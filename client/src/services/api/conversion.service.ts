@@ -6,6 +6,12 @@ interface ConversionResponseData {
   origin: string;
 }
 
+interface ConversionAPI {
+  getNumber: FetchConversionFunction<any>;
+  getSeconds: FetchConversionFunction<any>;
+  getAtmospheres: FetchConversionFunction<any>;
+}
+
 export type FetchConversionFunction<T> = (
   val: T,
 ) => Promise<RequestResponse<ConversionResponseData>>;
@@ -42,10 +48,26 @@ export const fetchEridianNumberToHuman: FetchConversionFunction<
   return request.get(`/eridian/number/${num}`);
 };
 
-export const HumanConversionAPI = {
-  getNumber: fetchHumanNumberToEridian,
+export const fetchEridianAtmospheresToHuman: FetchConversionFunction<
+  number
+> = (num) => {
+  return request.get(`/eridian/atmospheres/${num}`);
 };
 
-export const EridianConversionAPI = {
+export const fetchHumanAtmospheresToEridian: FetchConversionFunction<
+  number
+> = (num) => {
+  return request.get(`/eridian/atmospheres/${num}`);
+};
+
+export const HumanConversionAPI = {
+  getNumber: fetchHumanNumberToEridian,
+  getAtmospheres: fetchHumanAtmospheresToEridian,
+  getSeconds: fetchHumanSecondsToEridian,
+};
+
+export const EridianConversionAPI: ConversionAPI = {
   getNumber: fetchEridianNumberToHuman,
+  getSeconds: fetchEridianSecondsToHuman,
+  getAtmospheres: fetchEridianAtmospheresToHuman,
 };
