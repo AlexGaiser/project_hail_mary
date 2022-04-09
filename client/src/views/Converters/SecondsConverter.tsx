@@ -1,11 +1,7 @@
-import React, { useState } from 'react';
-import { EridianKeyboard } from '../../components/EridianKeyboard/EridianKeyboard';
 import {
   fetchEridianSecondsToHuman,
   fetchHumanSecondsToEridian,
 } from '../../services/api/conversion.service';
-import { Input } from '../../shared/Input';
-import arrowImg from '../../assets/arrow.svg';
 import TwoWayConverter, { ConversionHook } from './TwoWayConverter';
 
 const SecondsConverter = () => {

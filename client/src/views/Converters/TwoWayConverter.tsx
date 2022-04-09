@@ -46,11 +46,7 @@ const TwoWayConverter = ({
     <div className="bg-white shadow-md flex flex-col rounded px-8 pt-6 pb-8 mb-4 w-full">
       <h1 className="">{title}</h1>
       <div className="grid grid-cols-7 gap-4">
-        <div
-          className={`col-span-3 ${
-            isFirstToSecond ? 'bg-orange-500' : ''
-          }`}
-        >
+        <div className={`col-span-3`}>
           <Input
             label={firstLabel}
             value={firstInputValue}
@@ -73,11 +69,7 @@ const TwoWayConverter = ({
             alt="switch-arrow"
           />
         </div>
-        <div
-          className={`col-span-3 ${
-            !isFirstToSecond ? 'bg-indigo-500' : ''
-          }`}
-        >
+        <div className={`col-span-3`}>
           <Input
             label={secondLabel}
             value={secondInputValue}
@@ -88,7 +80,6 @@ const TwoWayConverter = ({
               setSecondInputValue(secondInputValue + value)
             }
             clearFunction={() => setSecondInputValue('')}
-            // styles={{buttonClass:"btn"}}
           />
         </div>
       </div>
